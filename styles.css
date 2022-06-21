@@ -1,0 +1,108 @@
+@import url('https://fonts.cdnfonts.com/css/montserrat');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    background-color: #F5F5F5;
+}
+
+header {
+    display: flex;
+    padding: 40px 0;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+.github-icon {
+    margin: 3px 0 0 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.github-icon:hover {
+    transform: rotate(360deg) scale(1.1);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.settings, .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.color-pickers {
+    display: flex;
+    gap: 10px;
+}
+
+.modes {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.size-slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.canvas {
+    display: grid;
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.single-grid {
+    user-select: none;
+}
+
+.copyright {
+    position: fixed;
+    width: 100vw;
+    padding: 10px 0;
+    bottom: 0;
+}
+
+.copyright-text {
+    font-size: 20px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color:  rgba(87, 110, 224, 1);
+}
+
+.author-name {
+    text-decoration: underline 0.15em rgba(87, 110, 224, 0);
+    transition: text-decoration-color 300ms;
+}
+
+.author-name:hover {
+    text-decoration-color: rgba(87, 110, 224, 1);
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch A Sketch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Etch A Sketch</h1>
+        <img src="img/github-icon-black.png" alt="github icon" class="github-icon" width="40" height="40">
+    </header>
+    <main>
+        <div class="canvas" id="canvas"></div>
+        </div>
+        <div class="settings">
+            <div class="buttons">
+                <div class="color-pickers">
+                    <div class="input-color">
+                        <label for="inputColor">Pen color:</label>
+                        <input id="inputColor" type="color" name="inputColor" value="#000000" />
+                    </div>
+                    <div class="background-color">
+                        <label for="backgroundColor">Background Color:</label>
+                        <input id="backgroundColor" type="color" name="backgroundColor" value="#FFFFFF" />
+                    </div> 
+                </div>
+                <div class="modes">
+                    <button id="colorButton">Color</button>
+                    <button id="rainbowButton">Rainbow</button>
+                    <button id="eraserButton">Eraser</button>
+                    <button id="resetButton">Reset</button>
+                </div>   
+            </div>
+            <div class="size-slider">
+                <p id="sizeValue">16 x 16</p>
+                <input type="range" id="sizeSlider" min="16" max="100" value="16">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="copyright">
+            <p class="copyright-text">Copyright &copy; <a href="https://paul-ian.tk"><span class="author-name">Lim Paul Ian</span></a></p>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
