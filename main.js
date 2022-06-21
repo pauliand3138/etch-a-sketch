@@ -20,7 +20,13 @@ backgroundColor.oninput = (e) => reloadCanvas(e.target.value);
 colorButton.onclick = () => setPaintMode("COLOR");
 rainbowButton.onclick = () => setPaintMode("RAINBOW");
 eraserButton.onclick = () => setPaintMode("ERASER");
-resetButton.onclick = () => reloadCanvas("#FFFFFF");
+resetButton.onclick = () => {
+    backgroundColor.value="#FFFFFF";
+    currentBackgroundColor = INITIAL_BACKGROUND;
+    sizeSlider.value = 16;
+    setSizeValue(INITIAL_SIZE);
+    setCanvasSize(INITIAL_SIZE);
+}
 sizeSlider.onmousemove = (e) => setSizeValue(e.target.value);
 sizeSlider.onchange = (e) =>setCanvasSize(e.target.value);
 
@@ -39,6 +45,7 @@ document.body.onmouseup = () => (mouseDown = false);
 //Functions
 function setPaintColor(newColor) {
     currentColor = newColor;
+    colorButton.style.borderColor = currentColor;
 }
 
 function reloadCanvas(color) {
@@ -49,6 +56,22 @@ function reloadCanvas(color) {
 
 function setPaintMode(newMode) {
     currentMode = newMode;
+    if (newMode == "COLOR") {
+        colorButton.classList.add("button-active");
+        rainbowButton.classList.remove("rainbow-active");
+        eraserButton.classList.remove("button-active");
+        eraserButton.style.borderColor = "black";
+    } else if (newMode == "RAINBOW") {
+        rainbowButton.classList.add("rainbow-active");
+        colorButton.classList.remove("button-active");
+        eraserButton.classList.remove("button-active");
+        eraserButton.style.borderColor = "black";
+    } else if (newMode == "ERASER") {
+        eraserButton.classList.add("button-active");
+        eraserButton.style.borderColor = "white";
+        colorButton.classList.remove("button-active");
+        rainbowButton.classList.remove("rainbow-active")
+    }
 }
 
 function setSizeValue(newValue) {
@@ -57,6 +80,7 @@ function setSizeValue(newValue) {
 
 function setCanvasSize(newSize) {
     currentSize = newSize;
+    setPaintMode("COLOR");
     reloadCanvas(currentBackgroundColor);
 }
 
@@ -90,4 +114,5 @@ function paintColor(e) {
 
 window.onload = () => {
     createCanvas(INITIAL_SIZE, INITIAL_BACKGROUND);
+    setPaintMode("COLOR");
 };

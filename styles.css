@@ -9,7 +9,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     height: 100vh;
-    background-color: #F5F5F5;
+    background-color:#E3E3E5;
 }
 
 header {
@@ -59,8 +59,20 @@ button {
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
     padding: 8px 16px;
+    border: 1px solid #000000;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.button-active {
+    border-width: 5px;
+    transform: scale(1.05);
+}
+
+.rainbow-active {
+    border-width: 5px;
+    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+    border-image-slice: 1;
 }
 
 .size-slider {
